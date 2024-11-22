@@ -3,7 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	go_xmlrpc "github.com/hheconvit23012002/go-xmlrpc"
+	go_xmlrpc2 "github.com/hheconvit23012002/go-xmlrpc/go-xmlrpc"
 	"log/slog"
 	"net/http"
 	"os"
@@ -44,10 +44,10 @@ type CallResponse struct {
 
 // InitCallInHandler handles the InitCallIn method
 type InitCallInHandler struct {
-	logger go_xmlrpc.LoggerInterface
+	logger go_xmlrpc2.LoggerInterface
 }
 
-func (h *InitCallInHandler) Handle(params []go_xmlrpc.ParamValue) (interface{}, error) {
+func (h *InitCallInHandler) Handle(params []go_xmlrpc2.ParamValue) (interface{}, error) {
 	if len(params) == 0 || params[0].Value.StructValue == nil {
 		return nil, fmt.Errorf("invalid parameters")
 	}
@@ -89,7 +89,7 @@ func main() {
 	loggerAdapter := &SlogAdapter{logger: logger}
 
 	// Create and configure XML-RPC server
-	server := go_xmlrpc.NewServer(go_xmlrpc.ServerConfig{
+	server := go_xmlrpc2.NewServer(go_xmlrpc2.ServerConfig{
 		Logger: loggerAdapter,
 	})
 
