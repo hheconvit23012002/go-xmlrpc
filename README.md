@@ -1,5 +1,5 @@
 ## Installation
 
 ```bash
-go get github.com/yourusername/go-xmlrpc
+go get github.com/hheconvit23012002/go-xmlrpc
 ```
