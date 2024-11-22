@@ -3,7 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	go_xmlrpc2 "github.com/hheconvit23012002/go-xmlrpc/go-xmlrpc"
+	goxmlrpc "github.com/hheconvit23012002/go-xmlrpc/go-xmlrpc"
 	"log/slog"
 	"net/http"
 	"os"
@@ -89,7 +89,7 @@ func main() {
 	loggerAdapter := &SlogAdapter{logger: logger}
 
 	// Create and configure XML-RPC server
-	server := go_xmlrpc2.NewServer(go_xmlrpc2.ServerConfig{
+	server := goxmlrpc.NewServer(go_xmlrpc2.ServerConfig{
 		Logger: loggerAdapter,
 	})
 
